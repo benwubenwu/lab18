@@ -196,7 +196,7 @@ type env = (varid * value) list ;;
 Exercise 13: Fill in the implementation of the empty environment.
 ....................................................................*)
 
-let empty : env = failwith "empty not implemented" ;;
+let empty : env = [] ;;
 
 (*....................................................................
 Exercise 14: Write a function extend : env -> varid -> value -> env
@@ -206,7 +206,7 @@ already in the environment.
 ....................................................................*)
 
 let extend (e : env) (x : varid) (v : value) : env =
-  failwith "extend not implemented" ;;
+  (x, v) :: (List.remove_assoc x e) ;;
 
 (*....................................................................
 Exercise 15: Write a function lookup : env -> varid -> value that
@@ -215,5 +215,5 @@ Not_found exception if the variable has no value in the environment.
 ....................................................................*)
 
 let lookup (x : varid) (e : env) : value =
-  failwith "lookup not implemented" ;;
+  List.assoc ;;
 
