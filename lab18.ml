@@ -214,6 +214,6 @@ returns the value of a variable in the given environment, raising a
 Not_found exception if the variable has no value in the environment.
 ....................................................................*)
 
-let lookup (x : varid) (e : env) : value =
+let lookup : varid -> env -> value =
   List.assoc ;;
 
